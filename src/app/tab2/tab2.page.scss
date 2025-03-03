@@ -1,0 +1,40 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ion-card {
+  width: 50%;
+  max-width: 500px;
+  --background: #ffffff; /* Fondo de la tarjeta */
+  --color: #000000; /* Color del texto */
+}
+
+ion-card-header {
+  --background: #6200ea; /* Fondo del encabezado de la tarjeta */
+  --color: #ffffff; /* Color del texto del encabezado */
+}
+
+ion-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+ion-item {
+  --background: #f8f9fa; /* Fondo del item */
+  --color: #000000; /* Color del texto */
+}
+
+ion-input,
+ion-datetime,
+ion-textarea {
+  --background: #ffffff; /* Fondo del input */
+  --color: #000000; /* Color del texto */
+}
+
+ion-button {
+  --background: #6200ea; /* Fondo del botón */
+  --color: #ffffff; /* Color del texto del botón */
+}

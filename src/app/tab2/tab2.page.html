@@ -1,46 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Agregar noticia
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Agregar noticia</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <!--Se empiezan a agregar los campos para agregar una noticia-->
-  <ion-list>
-    <ion-item>
-      <ion-input labelPlacement="floating" placeholder="Título de tu noticia">
-        <div slot="label">Título de tu noticia <ion-text color="danger">(*)</ion-text></div>
-      </ion-input>
-    </ion-item>
+  <div class="form-container">
 
-    <ion-item>
-      <ion-datetime labelPlacement="floating" placeholder="Fecha de la noticia"></ion-datetime>
-    </ion-item>
+    <ion-card>
 
-    <ion-item>
-      <ion-input labelPlacement="floating" placeholder="URL de la imagen" (ionChange)="updateImagePreview($event)">
-        <div slot="label">URL de la imagen <ion-text color="danger">(*)</ion-text></div>
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <img [src]="imagePreview" *ngIf="imagePreview" alt="Vista previa de la imagen" style="max-width: 100px; max-height: 100px;">
-    </ion-item>
+      <ion-card-header>
+        <ion-card-title>Agregar Noticia</ion-card-title>
+      </ion-card-header>
 
-    <ion-item>
-      <ion-input labelPlacement="floating" placeholder="Título de tu noticia">
-        <div slot="label">Descripción de tu noticia <ion-text color="danger">(*)</ion-text></div>
-      </ion-input>
-    </ion-item>
+      <ion-card-content>
 
-  </ion-list>
+        <ion-list>
+          
+          <ion-item>
+            <ion-input labelPlacement="floating" placeholder="Título de tu noticia">
+              <div slot="label">Título de tu noticia <ion-text color="danger">(*)</ion-text></div>
+            </ion-input>
+          </ion-item>
 
-  <ion-button expand="full" (click)="agregarNoticia()">Agregar Noticia</ion-button>
+          <ion-item>
+            <ion-datetime labelPlacement="floating" placeholder="Fecha de la noticia"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-input labelPlacement="floating" placeholder="URL de la imagen" (ionChange)="updateImagePreview($event)">
+              <div slot="label">URL de la imagen <ion-text color="danger">(*)</ion-text></div>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <img [src]="imagePreview" *ngIf="imagePreview" alt="Vista previa de la imagen" style="max-width: 100px; max-height: 100px;">
+          </ion-item>
+
+          <ion-item>
+            <ion-textarea labelPlacement="floating" placeholder="Descripción de la noticia"></ion-textarea>
+          </ion-item>
+        </ion-list>
+
+        <ion-button expand="full" (click)="agregarNoticia()">Agregar Noticia</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
