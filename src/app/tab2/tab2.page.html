@@ -1,4 +1,3 @@
-
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -7,17 +6,12 @@
   </ion-header>
 
   <div class="form-container">
-
     <ion-card>
-
       <ion-card-header>
         <ion-card-title>Agregar Noticia</ion-card-title>
       </ion-card-header>
-
       <ion-card-content>
-
         <ion-list>
-          
           <ion-item>
             <ion-input labelPlacement="floating" placeholder="Título de tu noticia">
               <div slot="label">Título de tu noticia <ion-text color="danger">(*)</ion-text></div>
@@ -33,13 +27,14 @@
               <div slot="label">URL de la imagen <ion-text color="danger">(*)</ion-text></div>
             </ion-input>
           </ion-item>
-
-          <ion-item>
-            <img [src]="imagePreview" *ngIf="imagePreview" alt="Vista previa de la imagen" style="max-width: 100px; max-height: 100px;">
+          <ion-item class="image-preview-container">
+            <img [src]="imagePreview" *ngIf="imagePreview" alt="Vista previa de la imagen" class="image-preview">
           </ion-item>
 
           <ion-item>
-            <ion-textarea labelPlacement="floating" placeholder="Descripción de la noticia"></ion-textarea>
+            <ion-textarea labelPlacement="floating" placeholder="Descripción de la noticia">
+              <div slot="label">Descripción de la noticia <ion-text color="danger">(*)</ion-text></div>
+            </ion-textarea>
           </ion-item>
         </ion-list>
 
