@@ -1,26 +1,33 @@
-
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: fit-content;
+  
 }
 
 ion-card {
   width: 50%;
-  max-width: 500px;
-  --background: #ffffff; /* Fondo de la tarjeta */
+  height: fit-content;
+  max-width: 400px;
+  --background: #e5e5e5; /* Fondo de la tarjeta */
   --color: #000000; /* Color del texto */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.767); /* Sombra de la tarjeta */
 }
 
 ion-card-header {
-  --background: #6200ea; /* Fondo del encabezado de la tarjeta */
-  --color: #ffffff; /* Color del texto del encabezado */
+  --background: #8d007c; /* Fondo del encabezado de la tarjeta */
+  justify-content: center;
+  align-items: center;
+  //para agregarle un borde de sombra a la tarjeta se puede agregar la siguiente línea
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
 }
 
 ion-card-title {
+  
   font-size: 1.5em;
   font-weight: bold;
+  --color: #ffffff; /* Color del texto del encabezado */
 }
 
 ion-item {
@@ -51,3 +58,7 @@ ion-button {
   max-width: 80%; /* Ancho máximo de la imagen */
   max-height: 80%; /* Altura máxima de la imagen */
 }
+
+ion-content {
+  --background: linear-gradient(to right, #000000, #390337); /* Gradiente de morado a azul */
+} //otros tipos de gradientes son linear-gradient(to right, #6200ea, #007bff) o linear-gradient(to right, #6200ea, #007bff, #00ff00, #ff0000)
