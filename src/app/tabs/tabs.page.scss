@@ -1,1 +1,20 @@
+/* Cambiar el color de fondo de la barra de navegación */
+ion-tab-bar {
+  --background: #373839da; /* Color de fondo */
+}
+
+/* Cambiar el color de los textos de los botones */
+ion-tab-button {
+  --color: #ffffff; /* Color del texto */
+}
+
+/* Cambiar el color del icono de los botones */
+ion-tab-button ion-icon {
+  --color: #cb96eb; /* Color del icono */
+}
+
+/* Cambiar el color del texto y el icono cuando el botón está seleccionado */
+ion-tab-button[aria-selected="true"] {
+  --color: #007bff; /* Color del texto e icono cuando está seleccionado */
+}
 
