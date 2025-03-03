@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular'; // Importa IonicModule
+import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { Tab1Page } from './tab1.page';
 
 @NgModule({
+  declarations: [Tab1Page],
   imports: [
     CommonModule,
-    FormsModule,
-    IonicModule,
-    Tab1Page // Importar el componente como independiente
-  ]
+    IonicModule, // Asegúrate de que IonicModule esté aquí
+    Tab1PageRoutingModule,
+  ],
 })
 export class Tab1PageModule {}

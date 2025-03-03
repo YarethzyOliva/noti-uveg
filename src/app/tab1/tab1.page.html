@@ -1,29 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Noticias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let noticia of noticias">
+      <ion-label>
+        <h2>{{ noticia.titulo }}</h2>
+        <p>{{ noticia.contenido }}</p>
+      </ion-label>
+      <ion-button (click)="eliminarNoticia(noticia.id)" color="danger">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Noticias</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6" *ngFor="let noticia of noticias; let i = index">
-        <ion-card>
-          <ion-button fill="clear" class="delete-button" (click)="eliminarNoticia(i)">
-            <ion-icon name="trash"></ion-icon>
-          </ion-button>
-          <img [src]="noticia.imagen" *ngIf="noticia.imagen" alt="Imagen de la noticia">
-          <ion-card-header>
-            <ion-card-title>{{ noticia.titulo }}</ion-card-title>
-            <ion-card-subtitle>{{ noticia.fecha }}</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <p>{{ noticia.descripcion }}</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-button (click)="agregarNoticia()" expand="full">
+    Agregar Noticia
+  </ion-button>
 </ion-content>

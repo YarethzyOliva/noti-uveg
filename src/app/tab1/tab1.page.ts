@@ -1,28 +1,41 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
-  standalone: true,
-  imports: [CommonModule, IonicModule, FormsModule]
+  styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   noticias: any[] = [];
 
-  constructor() {
-    this.loadNoticias();
+  constructor(private firebaseService: FirebaseService) {}
+
+  ngOnInit() {
+    this.cargarNoticias();
   }
 
-  loadNoticias() {
-    this.noticias = JSON.parse(localStorage.getItem('noticias') || '[]');
+  // Cargar noticias desde Firestore
+  cargarNoticias() {
+    this.firebaseService.obtenerNoticias().subscribe((data) => {
+      this.noticias = data;
+    });
   }
 
-  eliminarNoticia(index: number) {
-    this.noticias.splice(index, 1);
-    localStorage.setItem('noticias', JSON.stringify(this.noticias));
+  // Agregar una noticia
+  agregarNoticia() {
+    const nuevaNoticia = { titulo: 'Nueva Noticia', contenido: 'Contenido de la noticia...' };
+    this.firebaseService.agregarNoticia(nuevaNoticia).then(() => {
+      console.log('Noticia agregada');
+      this.cargarNoticias(); // Recargar la lista de noticias
+    });
+  }
+
+  // Eliminar una noticia
+  eliminarNoticia(id: string) {
+    this.firebaseService.eliminarNoticia(id).then(() => {
+      console.log('Noticia eliminada');
+      this.cargarNoticias(); // Recargar la lista de noticias
+    });
   }
 }
