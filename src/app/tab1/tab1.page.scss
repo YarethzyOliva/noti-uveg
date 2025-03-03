@@ -26,3 +26,7 @@ ion-card-content {
   --color: #ff0000; /* Color del icono de eliminación */
   font-size: 23px;
 }
+
+ion-content {
+    --background: linear-gradient(to right, #01244e, #390337); /* Gradiente de morado a azul */
+  } //otros tipos de gradientes son linear-gradient(to right, #6200ea, #007bff) o linear-gradient(to right, #6200ea, #007bff, #00ff00, #ff0000)
