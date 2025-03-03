@@ -1,0 +1,7 @@
+{
+  "name": "noti-uveg",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
