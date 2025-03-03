@@ -20,4 +20,9 @@ export class Tab1Page {
   loadNoticias() {
     this.noticias = JSON.parse(localStorage.getItem('noticias') || '[]');
   }
+
+  eliminarNoticia(index: number) {
+    this.noticias.splice(index, 1);
+    localStorage.setItem('noticias', JSON.stringify(this.noticias));
+  }
 }

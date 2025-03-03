@@ -1,0 +1,28 @@
+ion-card {
+  position: relative;
+  width: 98%; /* Ancho de la tarjeta */
+  height: 370px; /* Altura fija de la tarjeta */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+ion-card img {
+  max-height: 190px; /* Altura máxima de la imagen */
+  object-fit: cover; /* Ajustar la imagen para cubrir el espacio */
+}
+
+ion-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0.5px;
+  right: 0.5px;
+  --color: #ff0000; /* Color del icono de eliminación */
+  font-size: 23px;
+}
