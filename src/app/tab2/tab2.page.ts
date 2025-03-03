@@ -7,7 +7,17 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab2Page {
+  imagePreview: string | null = null;
 
   constructor() {}
 
+  updateImagePreview(event: any) {
+    const url = event.target.value;
+    this.imagePreview = url;
+  }
+
+  agregarNoticia() {
+    // Lógica para agregar la noticia
+    console.log('Noticia agregada');
+  }
 }

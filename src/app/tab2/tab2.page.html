@@ -13,14 +13,34 @@
     </ion-toolbar>
   </ion-header>
 
-<!--Se empiezan a agregar los campos para agregar una noticia-->
-<ion-list>
-  <ion-item>
-    <ion-input labelPlacement="floating" >
-      <div slot="label">Título de tu noticia <ion-text color="danger">(*)</ion-text></div>
-    </ion-input>
-  </ion-item>
-</ion-list>
+  <!--Se empiezan a agregar los campos para agregar una noticia-->
+  <ion-list>
+    <ion-item>
+      <ion-input labelPlacement="floating" placeholder="Título de tu noticia">
+        <div slot="label">Título de tu noticia <ion-text color="danger">(*)</ion-text></div>
+      </ion-input>
+    </ion-item>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-item>
+      <ion-datetime labelPlacement="floating" placeholder="Fecha de la noticia"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-input labelPlacement="floating" placeholder="URL de la imagen" (ionChange)="updateImagePreview($event)">
+        <div slot="label">URL de la imagen <ion-text color="danger">(*)</ion-text></div>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <img [src]="imagePreview" *ngIf="imagePreview" alt="Vista previa de la imagen" style="max-width: 100px; max-height: 100px;">
+    </ion-item>
+
+    <ion-item>
+      <ion-input labelPlacement="floating" placeholder="Título de tu noticia">
+        <div slot="label">Descripción de tu noticia <ion-text color="danger">(*)</ion-text></div>
+      </ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="full" (click)="agregarNoticia()">Agregar Noticia</ion-button>
 </ion-content>
