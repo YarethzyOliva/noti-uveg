@@ -2,12 +2,12 @@
 export const environment = {
   production: false,
   firebase: {
-      apiKey: "AIzaSyC1Y21dv5ZZlhWX_g45VWY5cFO7kydYdUs",
-      authDomain: "ionic-firebase-bcc7f.firebaseapp.com",
-      projectId: "ionic-firebase-bcc7f",
-      storageBucket: "ionic-firebase-bcc7f.firebasestorage.app",
-      messagingSenderId: "133815072295",
-      appId: "1:133815072295:web:53c02c16778e1de7b9c002",
-      measurementId: "G-KMTWHJ342D"
+    apiKey: "AIzaSyC9lVQtkPTrACkaQev7b-M1fl53LlXkm7I",
+    authDomain: "ionic-firebase-52577.firebaseapp.com",
+    databaseURL: "https://ionic-firebase-52577-default-rtdb.firebaseio.com",
+    projectId: "ionic-firebase-52577",
+    storageBucket: "ionic-firebase-52577.firebasestorage.app",
+    messagingSenderId: "386522751166",
+    appId: "1:386522751166:web:5d79da70473b91c3a9beef"
   },
 };

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { initializeApp } from "firebase/app"; // Import initializeApp
+import { getDatabase, ref, set } from "firebase/database"; // Import necessary Firebase functions
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment'; // Import environment
 
 @Component({
   selector: 'app-tab2',
@@ -20,7 +23,13 @@ export class Tab2Page {
     imagen: ''
   };
 
-  constructor(private router: Router) {}
+  db: any;
+
+  constructor(private router: Router) {
+    // Initialize Firebase
+    initializeApp(environment.firebase);
+    this.db = getDatabase();
+  }
 
   updateImagePreview(event: any) {
     const url = event.target.value;
@@ -29,12 +38,12 @@ export class Tab2Page {
   }
 
   agregarNoticia() {
-    // Guardar la noticia en el almacenamiento local o en un servicio
-    const noticias = JSON.parse(localStorage.getItem('noticias') || '[]');
-    noticias.push(this.noticia);
-    localStorage.setItem('noticias', JSON.stringify(noticias));
-
-    // Redirigir a tab1 para ver la noticia agregada
-    this.router.navigate(['/tabs/tab1']);
+    const newNoticiaRef = ref(this.db, 'noticias/' + Date.now());
+    set(newNoticiaRef, this.noticia).then(() => {
+      // Redirect to tab1 to view the added news after successful addition
+      this.router.navigate(['/tabs/tab1']);
+    }).catch((error) => {
+      console.error("Error adding noticia: ", error);
+    });
   }
 }
